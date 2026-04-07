@@ -25,6 +25,8 @@ int main() {
     //Área para declaração de vetores.
     int navio1[3] = {3,3,3};
     int navio2[3] = {3,3,3};
+    int navio3[3] = {3,3,3};
+    int navio4[3] = {3,3,3};
 
     //Impressão do tabuleiro sem os návios.
     printf("Tabuleiro de Batalha Naval\n");
@@ -41,15 +43,29 @@ int main() {
     }
         printf("\n");   
     }
-    //Posicionamento dos návios inseridos por vetores.
+    //Posicionamento dos návios inseridos por vetores na horizontal
+    //e na vertical.
    for(int i = 1, j = 0; i < 5, j < 3; i++, j++)
    {
-        tabuleiro[i][7] += navio1[j];
+       
+            tabuleiro[i][7] += navio1[j];     
+        
    }
 
     for(int i = 4, j = 0; i < 5, j < 3; i++, j++)
    {
-        tabuleiro[4][i] += navio1[j];
+        tabuleiro[4][i] += navio2[j];
+   }
+    //Posicionamento dos návios inseridos por vetores na diagonal.
+    
+   for(int i = 0, j = 0; i < 5, j < 3; i++, j++)
+   {
+        tabuleiro[i][i] += navio3[j];
+   }
+
+    for(int i = 0, j = 0; i < 5, j < 3; i++, j++)
+   {
+        tabuleiro[8-i][1+i] += navio4[j];
    }
 
    printf("\n");
